@@ -8,6 +8,7 @@ export default factories.createCoreController('api::applicant.applicant', ({ str
         if (email) orFilters.push({ Email: { $containsi: email } });
         if (phone) orFilters.push({ Phone: { $containsi: phone } });
         if (name) orFilters.push({ FullName: { $containsi: name } });
+        if (pmec) orFilters.push({ Pmec: { $containsi: pmec } });
 
         if (orFilters.length === 0) return [];
 
