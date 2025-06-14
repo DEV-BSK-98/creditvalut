@@ -5,7 +5,7 @@ export default {
         path: '/applicants/search',
         handler: 'applicant.search',
         config: {
-            auth: true, // Set to true if you want authentication
+            auth: false, // Set to true if you want authentication
         },
         },
     ],
