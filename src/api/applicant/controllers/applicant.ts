@@ -1,10 +1,3 @@
-/**
- * applicant controller
- */
-
-// import { factories } from '@strapi/strapi'
-
-// export default factories.createCoreController('api::applicant.applicant');
 import { factories } from '@strapi/strapi';
 
 export default factories.createCoreController('api::applicant.applicant', ({ strapi }) => ({
@@ -12,14 +5,13 @@ export default factories.createCoreController('api::applicant.applicant', ({ str
         const { email, phone, name } = ctx.query;
 
         const orFilters = [];
-
         if (email) orFilters.push({ Email: { $containsi: email } });
         if (phone) orFilters.push({ Phone: { $containsi: phone } });
         if (name) orFilters.push({ FullName: { $containsi: name } });
 
         if (orFilters.length === 0) return [];
 
-    const results = await strapi.entityService.findMany('api::applicant.applicant', {
+        const results = await strapi.documents('api::applicant.applicant').findMany({
         filters: { $or: orFilters },
         populate: '*',
         });
