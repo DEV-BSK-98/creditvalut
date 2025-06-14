@@ -34,6 +34,10 @@ export interface AdminApiToken extends Struct.CollectionTypeSchema {
         minLength: 1;
       }> &
       Schema.Attribute.DefaultTo<''>;
+    encryptedKey: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 1;
+      }>;
     expiresAt: Schema.Attribute.DateTime;
     lastUsedAt: Schema.Attribute.DateTime;
     lifespan: Schema.Attribute.BigInteger;
@@ -393,7 +397,11 @@ export interface ApiApplicantApplicant extends Struct.CollectionTypeSchema {
     Email: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
+    employment_type: Schema.Attribute.String;
     FullName: Schema.Attribute.String & Schema.Attribute.Required;
+    loan_amount: Schema.Attribute.Decimal &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<0>;
     loan_applications: Schema.Attribute.Relation<
       'oneToMany',
       'api::loan-application.loan-application'
@@ -404,9 +412,13 @@ export interface ApiApplicantApplicant extends Struct.CollectionTypeSchema {
       'api::applicant.applicant'
     > &
       Schema.Attribute.Private;
+    outstanding_balance: Schema.Attribute.Decimal &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<0>;
     Phone: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
+    pmec: Schema.Attribute.String & Schema.Attribute.Unique;
     publishedAt: Schema.Attribute.DateTime;
     SSN: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;

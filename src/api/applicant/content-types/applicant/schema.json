@@ -9,6 +9,7 @@
   "options": {
     "draftAndPublish": true
   },
+  "pluginOptions": {},
   "attributes": {
     "FullName": {
       "type": "string",
@@ -29,8 +30,8 @@
     },
     "Phone": {
       "type": "string",
-      "unique": true,
-      "required": true
+      "required": true,
+      "unique": true
     },
     "Address": {
       "type": "customField",
@@ -47,6 +48,23 @@
       "relation": "oneToMany",
       "target": "api::credit-evaluation.credit-evaluation",
       "mappedBy": "applicant"
+    },
+    "outstanding_balance": {
+      "type": "decimal",
+      "required": true,
+      "default": 0
+    },
+    "loan_amount": {
+      "type": "decimal",
+      "required": true,
+      "default": 0
+    },
+    "pmec": {
+      "type": "string",
+      "unique": true
+    },
+    "employment_type": {
+      "type": "string"
     }
   }
 }
