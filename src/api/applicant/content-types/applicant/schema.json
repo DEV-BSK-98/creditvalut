@@ -59,9 +59,9 @@
       "required": true,
       "default": 0
     },
-    "pmec": {
+    "Pmec": {
       "type": "string",
-      "unique": true
+      "unique": false
     },
     "employment_type": {
       "type": "string"

@@ -418,7 +418,7 @@ export interface ApiApplicantApplicant extends Struct.CollectionTypeSchema {
     Phone: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
-    pmec: Schema.Attribute.String & Schema.Attribute.Unique;
+    Pmec: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     SSN: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;

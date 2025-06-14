@@ -2,7 +2,7 @@ import { factories } from '@strapi/strapi';
 
 export default factories.createCoreController('api::applicant.applicant', ({ strapi }) => ({
     async search(ctx) {
-        const { email, phone, name } = ctx.query;
+        const { email, phone, name, pmec } = ctx.query;
 
         const orFilters = [];
         if (email) orFilters.push({ Email: { $containsi: email } });
