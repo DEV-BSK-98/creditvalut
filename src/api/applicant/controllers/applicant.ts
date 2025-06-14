@@ -10,13 +10,13 @@ export default factories.createCoreController('api::applicant.applicant', ({ str
         if (name) orFilters.push({ FullName: { $containsi: name } });
         if (pmec) orFilters.push({ Pmec: { $containsi: pmec } });
 
-        if (orFilters.length === 0) return [];
+        if (orFilters.length === 0) return {};
 
         const results = await strapi.documents('api::applicant.applicant').findMany({
         filters: { $or: orFilters },
         populate: '*',
         });
 
-        return results;
+        return results[0];
     },
 }));
