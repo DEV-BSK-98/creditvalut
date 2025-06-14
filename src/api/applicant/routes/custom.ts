@@ -1,11 +1,12 @@
-export default [
-    {
+export default {
+    routes: [
+        {
         method: 'GET',
         path: '/applicants/search',
-        handler: 'api::applicant.applicant.search',
+        handler: 'applicant.search',
         config: {
-        auth: false, // optional: allow public access
-        policies: [],
+            auth: false, // Set to true if you want authentication
         },
-    },
-];
+        },
+    ],
+};
