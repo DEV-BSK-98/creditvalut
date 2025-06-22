@@ -15,6 +15,17 @@
       "type": "string",
       "required": true
     },
+    "FirstName": {
+      "type": "string",
+      "required": true
+    },
+    "LastName": {
+      "type": "string",
+      "required": true
+    },
+    "OtherName": {
+      "type": "string"
+    },
     "DateOfBirth": {
       "type": "string",
       "required": true
