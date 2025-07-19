@@ -400,6 +400,7 @@ export interface ApiApplicantApplicant extends Struct.CollectionTypeSchema {
     employment_type: Schema.Attribute.String;
     FirstName: Schema.Attribute.String & Schema.Attribute.Required;
     FullName: Schema.Attribute.String & Schema.Attribute.Required;
+    Gender: Schema.Attribute.String;
     LastName: Schema.Attribute.String & Schema.Attribute.Required;
     loan_amount: Schema.Attribute.Decimal &
       Schema.Attribute.Required &
@@ -414,6 +415,7 @@ export interface ApiApplicantApplicant extends Struct.CollectionTypeSchema {
       'api::applicant.applicant'
     > &
       Schema.Attribute.Private;
+    Nrc_No: Schema.Attribute.String;
     OtherName: Schema.Attribute.String;
     outstanding_balance: Schema.Attribute.Decimal &
       Schema.Attribute.Required &
@@ -424,6 +426,7 @@ export interface ApiApplicantApplicant extends Struct.CollectionTypeSchema {
     Pmec: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     SSN: Schema.Attribute.String & Schema.Attribute.Required;
+    TPIN: Schema.Attribute.BigInteger;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
